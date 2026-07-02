@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildTrack - Workers</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #1a3a5c;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    .navbar-logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .navbar-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .navbar-links a:hover {
+      color: white;
+    }
+
+    .navbar-links a.active {
+      color: white;
+      border-bottom: 2px solid #1d9e75;
+      padding-bottom: 4px;
+    }
+
+    .logout-btn {
+      background-color: #e24b4a;
+      color: white !important;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    /* Page content */
+    .page-content {
+      padding: 30px;
+    }
+
+    /* Top row - heading and button */
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .top-row h2 {
+      font-size: 22px;
+      color: #1a3a5c;
+    }
+
+    /* Add worker button */
+    .add-btn {
+      background-color: #1a3a5c;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .add-btn:hover {
+      background-color: #1d6a5c;
+    }
+
+    /* White box around table */
+    .table-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    /* The table itself */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Table heading row */
+    thead {
+      background-color: #f8fafc;
+    }
+
+    thead th {
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 13px;
+      color: #888;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Table data rows */
+    tbody td {
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #444;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Row hover effect */
+    tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    /* Status badges */
+    .badge {
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .badge-present {
+      background-color: #e1f5ee;
+      color: #0f6e56;
+    }
+
+    .badge-absent {
+      background-color: #fcebeb;
+      color: #a32d2d;
+    }
+
+    .badge-leave {
+      background-color: #faeeda;
+      color: #854f0b;
+    }
+
+    /* Worker avatar circle */
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: #1a3a5c;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .worker-name {
+      display: flex;
+      align-items: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="navbar.html" class="navbar-logo">🏗️ BuildTrack</a>
+    <ul class="navbar-links">
+      <li><a href="navbar.html">Dashboard</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="workers.html" class="active">Workers</a></li>
+      <li><a href="#">Inventory</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="login.html" class="logout-btn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="page-content">
+
+    <!-- Top row -->
+    <div class="top-row">
+      <h2>Worker Management</h2>
+      <button class="add-btn">+ Add Worker</button>
+    </div>
+
+    <!-- Worker Table -->
+    <div class="table-box">
+      <table>
+
+        <!-- Table Headings -->
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Site</th>
+            <th>Shift</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <!-- Table Data -->
+        <tbody>
+
+          <tr>
+            <td>1</td>
+            <td>
+              <div class="worker-name">
+                <div class="avatar">RK</div>
+                Ramesh Kumar
+              </div>
+            </td>
+            <td>Site Engineer</td>
+            <td>City Mall, Pune</td>
+            <td>Morning</td>
+            <td><span class="badge badge-present">Present</span></td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>
+              <div class="worker-name">
+                <div class="avatar">SP</div>
+                Suresh Patil
+              </div>
+            </td>
+            <td>Contractor</td>
+            <td>Highway Bypass, Nashik</td>
+            <td>Morning</td>
+            <td><span class="badge badge-absent">Absent</span></td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>
+              <div class="worker-name">
+                <div class="avatar">AS</div>
+                Anjali Sharma
+              </div>
+            </td>
+            <td>Supervisor</td>
+            <td>Residential Block, Mumbai</td>
+            <td>Evening</td>
+            <td><span class="badge badge-present">Present</span></td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>
+              <div class="worker-name">
+                <div class="avatar">MK</div>
+                Mahesh Kulkarni
+              </div>
+            </td>
+            <td>Skilled Worker</td>
+            <td>Office Tower, Nagpur</td>
+            <td>Morning</td>
+            <td><span class="badge badge-leave">On Leave</span></td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>
+              <div class="worker-name">
+                <div class="avatar">PJ</div>
+                Priya Joshi
+              </div>
+            </td>
+            <td>Consultant</td>
+            <td>City Mall, Pune</td>
+            <td>Evening</td>
+            <td><span class="badge badge-present">Present</span></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

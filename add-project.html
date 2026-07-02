@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildTrack - Add Project</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #1a3a5c;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+    }
+
+    .navbar-logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .navbar-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .navbar-links a:hover {
+      color: white;
+    }
+
+    .navbar-links a.active {
+      color: white;
+      border-bottom: 2px solid #1d9e75;
+      padding-bottom: 4px;
+    }
+
+    .logout-btn {
+      background-color: #e24b4a;
+      color: white !important;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    /* Page content */
+    .page-content {
+      padding: 30px;
+    }
+
+    /* Top row */
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .top-row h2 {
+      font-size: 22px;
+      color: #1a3a5c;
+    }
+
+    .back-btn {
+      background-color: white;
+      color: #1a3a5c;
+      padding: 8px 18px;
+      border: 1px solid #1a3a5c;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Form box */
+    .form-box {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 30px;
+      max-width: 750px;
+    }
+
+    /* Section heading inside form */
+    .section-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1a3a5c;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Two inputs side by side */
+    .row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 4px;
+    }
+
+    .field {
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #444;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #1a3a5c;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    /* Bottom buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .submit-btn {
+      background-color: #1a3a5c;
+      color: white;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #1d6a5c;
+    }
+
+    .cancel-btn {
+      background-color: white;
+      color: #888;
+      padding: 12px 28px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .cancel-btn:hover {
+      background-color: #f0f4f8;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="navbar.html" class="navbar-logo">🏗️ BuildTrack</a>
+    <ul class="navbar-links">
+      <li><a href="navbar.html">Dashboard</a></li>
+      <li><a href="#" class="active">Projects</a></li>
+      <li><a href="workers.html">Workers</a></li>
+      <li><a href="#">Inventory</a></li>
+      <li><a href="#">Reports</a></li>
+      <li><a href="login.html" class="logout-btn">Logout</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="page-content">
+
+    <!-- Top row -->
+    <div class="top-row">
+      <h2>Add New Project</h2>
+      <a href="navbar.html" class="back-btn">← Back to Dashboard</a>
+    </div>
+
+    <!-- Form Box -->
+    <div class="form-box">
+
+      <form>
+
+        <!-- Section 1 - Basic Info -->
+        <p class="section-title">📋 Basic Project Information</p>
+
+        <div class="row">
+          <div class="field">
+            <label>Project Name</label>
+            <input type="text" placeholder="Enter project name">
+          </div>
+          <div class="field">
+            <label>Project Category</label>
+            <select>
+              <option value="">-- Select Category --</option>
+              <option>Residential</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+              <option>Infrastructure</option>
+              <option>Government</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Project Description</label>
+          <textarea placeholder="Describe the project..."></textarea>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Project Location</label>
+            <input type="text" placeholder="Enter site location">
+          </div>
+          <div class="field">
+            <label>Project Manager</label>
+            <select>
+              <option value="">-- Select Manager --</option>
+              <option>Ramesh Kumar</option>
+              <option>Anjali Sharma</option>
+              <option>Suresh Patil</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 2 - Dates -->
+        <p class="section-title">📅 Project Timeline</p>
+
+        <div class="row">
+          <div class="field">
+            <label>Start Date</label>
+            <input type="date">
+          </div>
+          <div class="field">
+            <label>End Date</label>
+            <input type="date">
+          </div>
+          <div class="field">
+            <label>Project Status</label>
+            <select>
+              <option value="">-- Select Status --</option>
+              <option>Planning</option>
+              <option>In Progress</option>
+              <option>On Hold</option>
+              <option>Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 3 - Budget -->
+        <p class="section-title">💰 Budget Information</p>
+
+        <div class="row">
+          <div class="field">
+            <label>Total Budget (₹)</label>
+            <input type="number" placeholder="Enter total budget">
+          </div>
+          <div class="field">
+            <label>Initial Cost Estimate (₹)</label>
+            <input type="number" placeholder="Enter cost estimate">
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-row">
+          <button type="submit" class="submit-btn">✅ Create Project</button>
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
