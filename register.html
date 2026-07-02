@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildTrack - Register</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .register-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      width: 420px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #1a3a5c;
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .row .field {
+      flex: 1;
+    }
+
+    label {
+      font-size: 13px;
+      color: #444;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: #1a3a5c;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #1a3a5c;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1d6a5c;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .login-link a {
+      color: #1a3a5c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="register-box">
+
+    <h1>Create your account</h1>
+    <p>Join BuildTrack and manage your projects</p>
+
+    <form>
+
+      <div class="row">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" placeholder="Enter first name">
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" placeholder="Enter last name">
+        </div>
+      </div>
+
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter your email">
+
+      <label>Phone Number</label>
+      <input type="tel" placeholder="Enter your phone number">
+
+      <label>Select Your Role</label>
+      <select>
+        <option value="">-- Select Role --</option>
+        <option value="admin">Administrator</option>
+        <option value="manager">Project Manager</option>
+        <option value="engineer">Site Engineer</option>
+        <option value="contractor">Contractor</option>
+        <option value="worker">Worker</option>
+        <option value="client">Client</option>
+      </select>
+
+      <label>Password</label>
+      <input type="password" placeholder="Create a password">
+
+      <label>Confirm Password</label>
+      <input type="password" placeholder="Confirm your password">
+
+      <button type="submit">Create Account</button>
+
+    </form>
+
+    <p class="login-link">
+      Already have an account?
+      <a href="login.html">Sign in</a>
+    </p>
+
+  </div>
+
+</body>
+
+</html>
